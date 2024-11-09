@@ -1,9 +1,9 @@
-import OptionsContainer from "./OptionsContainer"
+import GameContainer from "./GameContainer"
 
 export default function() {
     return (
-        <div>
-            <OptionsContainer></OptionsContainer>
+        <div className="flex justify-center h-screen">
+            <GameContainer></GameContainer>
         </div>
     )
 }
