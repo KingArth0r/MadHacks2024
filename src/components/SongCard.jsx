@@ -7,7 +7,7 @@ export default function SongCard({imgSrc, name, letter}) {
             <div className="relative group w-14 h-14">
                 <img
                     src={imgSrc}
-                    alt="Picture"
+                    alt={name}
                     className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-50 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
