@@ -5,6 +5,9 @@ export default function GameContainer({ selectedNotes, setSelectedNotes, showNon
     const [selectedGuess, setSelectedGuess] = useState(null);
     const [accuracy, setAccuracy] = useState({ correct: 0, total: 0 });
     const [feedback, setFeedback] = useState(null);
+    const [isHovered, setIsHovered] = useState(false);
+
+    const A = new Audio('/notes/A.mp3');
 
     const allNotes = [
         "A", "A𝄲", "A♯/B♭", "A-♯/B𝄳",
@@ -77,15 +80,16 @@ export default function GameContainer({ selectedNotes, setSelectedNotes, showNon
     const accuracyPercentage = accuracy.total > 0 ? (accuracy.correct / accuracy.total) * 100 : 0;
 
     return (
-        <div className="my-4 border-2 border-cppBlue rounded-md px-6 py-4 space-y-4">
+        <div className="my-4 rounded-md px-6 py-4 space-y-4">
             {!isStarted ? 
                 <div className="flex flex-col space-y-4">
-                    <p className="text-lg font-semibold">Options</p>
+                    
+
                     <div className={`grid ${gridColumnsClass} gap-2 mb-4`}>
                         {displayedNotes.map(note => (
                             <button
                                 key={note}
-                                className={`p-1 m-1 rounded-lg text-white hover:scale-105 w-14 h-14
+                                className={`p-1 m-1 rounded-lg text-white font-medium hover:scale-105 w-14 h-14
                                     ${selectedNotes.includes(note) ? 'bg-cppDark' : 'bg-cppLight'}`}
                                 onClick={() => handleNoteClick(note)}
                             >
@@ -95,7 +99,7 @@ export default function GameContainer({ selectedNotes, setSelectedNotes, showNon
                     </div>
                     {selectedNotes.length > 0 ? 
                         <button 
-                            className="font-bold text-white rounded-md bg-cppBlue hover:scale-105 border-2 border-cppDark p-2 mt-2"
+                            className="font-bold text-white rounded-md bg-cppBlue hover:scale-105 duration-100 border-2 border-cppDark p-2 mt-2"
                             onClick={startGame}
                         >
                             Start Game
@@ -117,6 +121,31 @@ export default function GameContainer({ selectedNotes, setSelectedNotes, showNon
                             {accuracyPercentage.toFixed(2)}%
                         </div>
                     </div>
+                    
+                    <button
+                        className="relative bg-cppDark text-white font-bold text-xl rounded-lg p-2 hover:scale-105 duration-100 overflow-hidden h-full"
+                        onMouseEnter={() => setIsHovered(true)}
+                        onMouseLeave={() => setIsHovered(false)}
+                        style={{
+                            position: 'relative',
+                        }}
+                        onClick={() => {A.play()}}
+                        >
+                        {/* Background Image (Fade-In Effect) */}
+                        <span
+                            className={`absolute inset-0 bg-center bg-cover transition-opacity duration-500 ease-in-out ${
+                            isHovered ? 'opacity-100' : 'opacity-0'
+                            }`}
+                            style={{
+                            backgroundImage: "url('/wave.gif')",
+                            }}
+                        ></span>
+
+                        {/* Button Text */}
+                        <span className="relative z-10">Hear Again</span>
+                    </button>
+
+
                     <p className="text-white text-lg font-semibold">Guess the Note:</p>
                     <div className={`grid ${gridColumnsClass} gap-2 mb-4`}>
                         {selectedNotes.map(note => (

@@ -2,8 +2,8 @@ import { FaPlay } from "react-icons/fa";
 
 export default function SongCard({imgSrc, name, letter}) {
     return (
-        <div className="flex items-center bg-cppLight border-2 rounded-md border-cppDark hover:cursor-pointer hover:scale-105 duration-100">
-            <p className="p-5 text-xl font-bold text-white rounded-lg mx-2">{letter}</p> 
+        <div className="flex items-center bg-cppLight border-2 rounded-md border-cppDark hover:cursor-pointer hover:scale-105 duration-100 p-2">
+            <p className="p-2 text-xl font-bold text-white rounded-lg mx-2">{letter}</p> 
             <div className="relative group w-14 h-14">
                 <img
                     src={imgSrc}
