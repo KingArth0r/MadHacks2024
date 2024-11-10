@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import GameContainer from "./GameContainer";
-import SongCard from './SongCard';
+
 
 export default function Body({darkMode}) {
     const [selectedNotes, setSelectedNotes] = useState([]);

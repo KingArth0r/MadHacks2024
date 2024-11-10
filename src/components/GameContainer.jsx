@@ -137,7 +137,7 @@ export default function GameContainer({ selectedNotes, setSelectedNotes, showNon
                         </button>
                         : <></>
                     }
-                    <div className="grid grid-cols-3 m-2"> <SongCard imgSrc="/PPPPLogo.png" letter="E" name="Runaway"/> <SongCard imgSrc="/PPPPLogo.png" letter="B♭" name="Bohemian Rhapsody"/> <SongCard imgSrc="/PPPPLogo.png" letter="C" name="Gangsta's Paradise"/>  </div>
+                    <div className="grid grid-cols-3"> <SongCard imgSrc="/PPPPLogo.png" letter="E" name="Runaway"/> <SongCard imgSrc="/PPPPLogo.png" letter="B♭" name="Bohemian Rhapsody"/> <SongCard imgSrc="/PPPPLogo.png" letter="C" name="Gangsta's Paradise"/>  </div>
                 </div>
             : 
                 <div className="space-y-4">
