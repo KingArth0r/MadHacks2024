@@ -4,13 +4,13 @@ export default function() {
     const [isStarted, setIsStarted] = useState(false);
     const [showMicrotones, setShowMicrotones] = useState(false);
     const [allNotes, setAllNotes] = useState([
-        "A", "A-", "A♯", "A-♯",
-        "B", "B-",
-        "C", "C-", "C♯", "C-♯",
-        "D", "D-", "D♯", "D-",
-        "E", "E-",
-        "F",  "F-", "F♯", "F-♯",
-        "G", "G-", "G♯", "F-♯"
+        "A", "A𝄲", "A♯/B♭", "A-♯/B𝄳",
+        "B", "B𝄲/C𝄳",
+        "C", "C𝄲", "C♯/D♭", "C-♯/D𝄳",
+        "D", "D𝄲", "D♯/E♭", "D-♯/E𝄳",
+        "E", "E𝄲/F𝄳",
+        "F",  "F𝄲", "F♯/G♭", "F-♯/F𝄳",
+        "G", "G𝄲", "G♯/A♭", "G-♯/G𝄳"
     ]);
     const [notes, setNotes] = useState([]);
 
