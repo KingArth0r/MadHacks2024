@@ -40,7 +40,7 @@ export default function Body({darkMode}) {
     };
 
     return (
-        <div className={`flex flex-col justify-start items-center h-full p-4 ${darkMode ? 'bg-darkGrey' : 'bg-white'} transition-all`}>
+        <div className={`min-h-screen flex flex-col justify-start items-center h-full p-4 ${darkMode ? 'bg-darkGrey' : 'bg-white'} transition-all`}>
 
             <div className="flex justify-center items-start w-full gap-4">
                 <div className="w-1/4 p-4 bg-cppLight rounded-lg shadow-lg">
@@ -99,7 +99,6 @@ export default function Body({darkMode}) {
                     </div>
                 </div>
             </div>
-            <SongCard imgSrc="PPPPLogo.png" name="Runaway" letter="E"/>
         </div>
     );
 }
