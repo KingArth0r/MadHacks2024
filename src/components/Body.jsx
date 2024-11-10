@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import GameContainer from "./GameContainer";
+import SongCard from './SongCard';
 
 export default function Body() {
     const [selectedNotes, setSelectedNotes] = useState([]);
     const [showNonChromatic, setShowNonChromatic] = useState(false);
+    const [isStarted, setIsStarted] = useState(false);
 
     const allNotes = [
         "A", "A𝄲", "A♯/B♭", "A-♯/B𝄳",
@@ -51,7 +53,10 @@ export default function Body() {
                         <li>Select the notes you want to include.</li>
                         <li>Click "Start Game" to begin.</li>
                         <li>Identify the played note correctly!</li>
+                        <li>Click "End Game" when done!</li>
                     </ul>
+                    {!isStarted ? 
+                    <>
                     <button 
                         className="w-full mt-4 py-2 bg-cppDark hover:scale-105 rounded-lg text-white"
                         onClick={resetNotes}
@@ -76,24 +81,29 @@ export default function Body() {
                     >
                         {showNonChromatic ? "Hide Non-Chromatic Notes" : "Show All Notes"}
                     </button>
+                    </>
+                    : <></>}
                 </div>
 
                 <GameContainer 
                     selectedNotes={selectedNotes} 
                     setSelectedNotes={setSelectedNotes} 
                     showNonChromatic={showNonChromatic} 
+                    isStarted={isStarted}
+                    setIsStarted={setIsStarted}
                 />
 
                 <div className="w-1/4 p-4 bg-cppLight rounded-lg shadow-lg">
                     <h2 className="text-xl font-semibold text-white">Selected Notes</h2>
-                    <div id="selected-notes" className="text-white mt-2">
+                    <div className={`text-white font-medium mt-2 ${selectedNotes.length > 0 ? 'grid grid-cols-3' : ''}`}>
                         {selectedNotes.length > 0 
-                            ? selectedNotes.join(', ') 
+                            ? selectedNotes.map((note) => <p>{note}</p>)
                             : <p className="text-gray-300">No notes selected</p>
                         }
                     </div>
                 </div>
             </div>
+            <SongCard imgSrc="PPPPLogo.png" name="Runaway" letter="E"/>
         </div>
     );
 }

@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
-export default function GameContainer({ selectedNotes, setSelectedNotes, showNonChromatic }) {
-    const [isStarted, setIsStarted] = useState(false);
+export default function GameContainer({ selectedNotes, setSelectedNotes, showNonChromatic, isStarted, setIsStarted }) {
     const [currentNote, setCurrentNote] = useState(null);
     const [selectedGuess, setSelectedGuess] = useState(null);
     const [accuracy, setAccuracy] = useState({ correct: 0, total: 0 });
@@ -94,16 +93,30 @@ export default function GameContainer({ selectedNotes, setSelectedNotes, showNon
                             </button>
                         ))}
                     </div>
-                    <button 
-                        className="font-bold text-white rounded-md bg-cppBlue hover:scale-105 border-2 border-cppDark p-2 mt-2"
-                        onClick={startGame}
-                        disabled={selectedNotes.length === 0}
-                    >
-                        Start Game
-                    </button>
+                    {selectedNotes.length > 0 ? 
+                        <button 
+                            className="font-bold text-white rounded-md bg-cppBlue hover:scale-105 border-2 border-cppDark p-2 mt-2"
+                            onClick={startGame}
+                        >
+                            Start Game
+                        </button>
+                        : <></>
+                    }
+                    
                 </div>
             : 
                 <div className="space-y-4">
+                    <p className="text-white mt-4 text-lg">
+                        Accuracy: {accuracyPercentage.toFixed(2)}%
+                    </p>
+                    <div className="w-full h-4 bg-gray-200 rounded-full overflow-hidden mt-2 relative">
+                        <div 
+                            className="h-full bg-green-500 text-xs text-white flex items-center justify-center font-semibold"
+                            style={{ width: `${accuracyPercentage}%` }}
+                        >
+                            {accuracyPercentage.toFixed(2)}%
+                        </div>
+                    </div>
                     <p className="text-white text-lg font-semibold">Guess the Note:</p>
                     <div className={`grid ${gridColumnsClass} gap-2 mb-4`}>
                         {selectedNotes.map(note => (
@@ -126,17 +139,6 @@ export default function GameContainer({ selectedNotes, setSelectedNotes, showNon
                     </button>
                 </div>
             }
-            <p className="text-white mt-4 text-lg">
-                Accuracy: {accuracyPercentage.toFixed(2)}%
-            </p>
-            <div className="w-full h-4 bg-gray-200 rounded-full overflow-hidden mt-2 relative">
-                <div 
-                    className="h-full bg-green-500 text-xs text-white flex items-center justify-center font-semibold"
-                    style={{ width: `${accuracyPercentage}%` }}
-                >
-                    {accuracyPercentage.toFixed(2)}%
-                </div>
-            </div>
         </div>
     );
 
