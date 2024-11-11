@@ -8,13 +8,13 @@ export default function Body({darkMode}) {
     const [isStarted, setIsStarted] = useState(false);
 
     const allNotes = [
-        "A", "A𝄲", "A♯/B♭", "A-♯/B𝄳",
+        "A", "A𝄲", "A♯/B♭", "B𝄳",
         "B", "B𝄲/C𝄳",
-        "C", "C𝄲", "C♯/D♭", "C-♯/D𝄳",
-        "D", "D𝄲", "D♯/E♭", "D-♯/E𝄳",
+        "C", "C𝄲", "C♯/D♭", "D𝄳",
+        "D", "D𝄲", "D♯/E♭", "E𝄳",
         "E", "E𝄲/F𝄳",
-        "F", "F𝄲", "F♯/G♭", "F-♯/F𝄳",
-        "G", "G𝄲", "G♯/A♭", "G-♯/G𝄳"
+        "F", "F𝄲", "F♯/G♭", "F𝄳",
+        "G", "G𝄲", "G♯/A♭", "G𝄳"
     ];
 
     // Standard Chromatic Scale (excluding quarter tones)
