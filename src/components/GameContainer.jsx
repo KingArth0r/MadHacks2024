@@ -18,7 +18,7 @@ export default function GameContainer({ selectedNotes, setSelectedNotes, showNon
         'C': new Audio('/notes/C.mp3'),
         "C𝄲": new Audio('/notes/Chs.mp3'),
         "C♯/D♭": new Audio('/notes/Cs.mp3'),
-        "C𝄳": new Audio('./notes/Dhf.mp3'),
+        "D𝄳": new Audio('./notes/Dhf.mp3'),
         'D': new Audio('/notes/D.mp3'),
         "D𝄲": new Audio('/notes/Dhs.mp3'),
         "D♯/B♭": new Audio('/notes/Ds.mp3'),
@@ -28,11 +28,11 @@ export default function GameContainer({ selectedNotes, setSelectedNotes, showNon
         'F': new Audio('/notes/F.mp3'),
         "F𝄲": new Audio('/notes/Fhs.mp3'),
         "F♯/B♭": new Audio('/notes/Fs.mp3'),
-        "F𝄳": new Audio('./notes/Ghf.mp3'),
+        "G𝄳": new Audio('./notes/Ghf.mp3'),
         'G': new Audio('/notes/G.mp3'),
         "G𝄲": new Audio('/notes/Ghs.mp3'),
         "G♯/B♭": new Audio('/notes/Gs.mp3'),
-        "G𝄳": new Audio('./notes/Ahf.mp3'),
+        "A𝄳": new Audio('./notes/Ahf.mp3'),
     }
 
     const allNotes = [
