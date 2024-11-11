@@ -27,7 +27,7 @@ export default function GameContainer({ selectedNotes, setSelectedNotes, showNon
         "E𝄲/F𝄳": new Audio('/notes/Ehs.mp3'),
         'F': new Audio('/notes/F.mp3'),
         "F𝄲": new Audio('/notes/Fhs.mp3'),
-        "F♯/B♭": new Audio('/notes/Fs.mp3'),
+        "F♯/G♭": new Audio('/notes/Fs.mp3'),
         "G𝄳": new Audio('./notes/Ghf.mp3'),
         'G': new Audio('/notes/G.mp3'),
         "G𝄲": new Audio('/notes/Ghs.mp3'),
