@@ -13,7 +13,7 @@ export default function Body({darkMode}) {
         "C", "C𝄲", "C♯/D♭", "D𝄳",
         "D", "D𝄲", "D♯/E♭", "E𝄳",
         "E", "E𝄲/F𝄳",
-        "F", "F𝄲", "F♯/G♭", "F𝄳",
+        "F", "F𝄲", "F♯/G♭", "E𝄲/F𝄳",
         "G", "G𝄲", "G♯/A♭", "G𝄳"
     ];
 

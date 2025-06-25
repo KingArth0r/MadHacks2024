@@ -41,7 +41,7 @@ export default function GameContainer({ selectedNotes, setSelectedNotes, showNon
         "C", "C𝄲", "C♯/D♭", "D𝄳",
         "D", "D𝄲", "D♯/E♭", "E𝄳",
         "E", "E𝄲/F𝄳",
-        "F", "F𝄲", "F♯/G♭", "F𝄳",
+        "F", "F𝄲", "F♯/G♭", "E𝄲/F𝄳",
         "G", "G𝄲", "G♯/A♭", "G𝄳"
     ];
 
@@ -137,7 +137,11 @@ export default function GameContainer({ selectedNotes, setSelectedNotes, showNon
                         </button>
                         : <></>
                     }
-                    <div className="grid grid-cols-3"> <SongCard imgSrc="/PPPPLogo.png" letter="E" name="Runaway" song="/songs/e/Kanye West - Runaway.mp3"/> <SongCard imgSrc="/PPPPLogo.png" letter="B♭" name="Bohemian Rhapsody" song="/songs/b/Queen - Bohemian Rhapsody.mp3"/> <SongCard imgSrc="/PPPPLogo.png" letter="C" name="Gangsta's Paradise" song="songs/c/Coolio - Gangsta's Paradise.mp3"/>  </div>
+                    <div className="grid grid-cols-3">
+                        <SongCard imgSrc="/PPPPLogo.png" letter="G" name="Chop Suey!" song="/songs/g/System Of A Down - Chop Suey!.mp3"/> 
+                        <SongCard imgSrc="/PPPPLogo.png" letter="B♭" name="Bohemian Rhapsody" song="/songs/b/Queen - Bohemian Rhapsody.mp3"/> 
+                        <SongCard imgSrc="/PPPPLogo.png" letter="C" name="Gangsta's Paradise" song="songs/c/Coolio - Gangsta's Paradise.mp3"/>
+                    </div>
                 </div>
             : 
                 <div className="space-y-4">
